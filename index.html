@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="How a Computer Really Works · Destination Durham">
 <meta property="og:description" content="A Destination Durham Computer Science taster session: go from a single on/off switch to driving a real RISC-V processor by hand, in two hours.">
-<meta property="og:image" content="assets/img/carlton-shepherd.jpg">
+<meta property="og:image" content="assets/img/cs-profile.jpeg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How a Computer Really Works · Destination Durham">
 <meta name="twitter:description" content="A Destination Durham Computer Science taster session: go from a single on/off switch to driving a real RISC-V processor by hand, in two hours.">
@@ -189,13 +189,15 @@
   .wl.long{min-width:60%}
   .wl.full{display:block;min-width:0;width:100%;height:1.5em}
   .ticklist{list-style:none;padding:0;margin:8px 0 0}
-  .ticklist li{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:8px;font-size:15px;margin-bottom:5px}
+  .ticklist li{border-radius:8px;margin-bottom:5px}
   .ticklist li:nth-child(odd){background:var(--lilac)}
-  .ticklist .box{width:22px;height:22px;border:2px solid var(--purple-lt);border-radius:5px;flex:none}
+  .ticklist label{display:flex;align-items:center;gap:12px;padding:9px 12px;font-size:15px;cursor:pointer}
+  .ticklist .box{width:22px;height:22px;border:2px solid var(--purple-lt);border-radius:5px;flex:none;
+    appearance:none;-webkit-appearance:none;margin:0;background:#fff;position:relative;cursor:pointer}
+  .ticklist .box:checked{background:var(--purple-lt);border-color:var(--purple-lt)}
+  .ticklist .box:checked::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:bold;line-height:1}
   .ticklist b{color:var(--purple-dk)}
-  .ticklist span.d{color:var(--muted);margin-left:auto;font-size:13.5px}
-  .printnote{background:var(--lilac);border:1px dashed var(--purple-lt);border-radius:9px;padding:12px 16px;font-size:14.5px;margin-top:6px}
-</style>
+  .ticklist span.d{color:var(--muted);margin-left:auto;font-size:13.5px}</style>
 </head>
 <body>
 
@@ -238,7 +240,7 @@
     <div class="kicker">Who's running today</div>
     <h2 class="sec">Meet Dr Carlton Shepherd</h2>
     <div class="host">
-      <img class="host-photo" src="assets/img/carlton-shepherd.jpg" alt="Photo of Dr Carlton Shepherd" width="160" height="160">
+      <img class="host-photo" src="assets/img/cs-profile.jpeg" alt="Photo of Dr Carlton Shepherd" width="160" height="160">
       <div class="host-bio">
         <p>Carlton is an <b>Assistant Professor of Cyber Security</b> in the Department of Computer Science at Durham University, and a Visiting Lecturer at Newcastle University. He researches how to keep phones, smart devices and embedded systems secure — including the <b>trusted execution environments</b> that protect things like fingerprint data and banking apps — and wrote <a href="https://link.springer.com/book/10.1007/978-3-031-55561-9" target="_blank" rel="noopener"><em>Trusted Execution Environments</em></a> (Springer, 2024), the first book-length treatment of the field.</p>
         <p>He holds a PhD from Royal Holloway, University of London, and a BSc in Computer Science from Newcastle University — and started out, like you, not knowing what was really happening inside a computer.</p>
@@ -478,9 +480,9 @@
 <!-- ============ WORKBOOK ============ -->
 <section id="workbook">
   <div class="wrap">
-    <div class="kicker">Paper companion</div>
+    <div class="kicker">Fill it in as you go</div>
     <h2 class="sec">Your student workbook</h2>
-    <p class="sub">Everything below is in the printable workbook your facilitator will hand out — write your guesses <b>before</b> you run anything. You can fill it in here on screen too, or just think it through.</p>
+    <p class="sub">Write your guesses <b>before</b> you run anything — fill it in here on screen, or just think it through.</p>
 
     <div class="sheet">
       <h3>Part 1 · It's all just switches</h3>
@@ -502,12 +504,12 @@
     <div class="sheet">
       <h3>Part 2 · The ladder — tick each rung as we reach it</h3>
       <ul class="ticklist">
-        <li><span class="box"></span><b>Apps &amp; websites</b><span class="d">what you normally use</span></li>
-        <li><span class="box"></span><b>Languages like C / Python</b><span class="d">human-friendly instructions</span></li>
-        <li><span class="box"></span><b>Assembly</b><span class="d">one line = one CPU instruction</span></li>
-        <li><span class="box"></span><b>Machine code</b><span class="d">pure numbers the CPU runs</span></li>
-        <li><span class="box"></span><b>Logic gates</b><span class="d">AND / OR / NOT from switches</span></li>
-        <li><span class="box"></span><b>Transistors &amp; electricity</b><span class="d">the physical on/off switches</span></li>
+        <li><label><input type="checkbox" class="box"><b>Apps &amp; websites</b><span class="d">what you normally use</span></label></li>
+        <li><label><input type="checkbox" class="box"><b>Languages like C / Python</b><span class="d">human-friendly instructions</span></label></li>
+        <li><label><input type="checkbox" class="box"><b>Assembly</b><span class="d">one line = one CPU instruction</span></label></li>
+        <li><label><input type="checkbox" class="box"><b>Machine code</b><span class="d">pure numbers the CPU runs</span></label></li>
+        <li><label><input type="checkbox" class="box"><b>Logic gates</b><span class="d">AND / OR / NOT from switches</span></label></li>
+        <li><label><input type="checkbox" class="box"><b>Transistors &amp; electricity</b><span class="d">the physical on/off switches</span></label></li>
       </ul>
     </div>
 
@@ -525,7 +527,6 @@
       <p class="lead">The Workbench is free and always at <code class="inline">cs.gl/riscv-web-emulator/</code>. Two challenges:</p>
       <div class="wq"><b>1.</b> Write a program that prints the numbers 1 to 5 on separate lines.</div>
       <div class="wq"><b>2.</b> Draw your initials on the 64×64 screen. (Hint: set individual pixels using row and column.)</div>
-      <div class="printnote">📄 Prefer paper? Your facilitator has this as a printable PDF workbook — same exercises, room to scribble.</div>
     </div>
   </div>
 </section>
@@ -535,11 +536,11 @@
   <div class="wrap">
     <div class="kicker">Before you go</div>
     <h2 class="sec">Why this matters for you</h2>
-    <p class="sub">You don't need to have coded before today, and you don't need to decide anything now. But if any of this clicked, here's where it can lead.</p>
+    <p class="sub">You don't need to have coded before today, and you don't need to decide anything now. But the fundamentals you touched today matter more than they might seem.</p>
     <div class="cards">
-      <div class="card"><h3>It's a huge, growing field</h3><p>Cyber security alone employs hundreds of thousands of people in the UK, and demand keeps outpacing supply — in industry, government and research.</p></div>
-      <div class="card"><h3>It's not just for "computer people"</h3><p>Every bank, hospital, phone and car now runs on the kind of low-level logic you touched today. Maths, physics, electronics — or just curiosity — are all valid ways in.</p></div>
-      <div class="card"><h3>Durham runs a Computer Science degree</h3><p>Everything from today — binary, the CPU, how programs really run — is core first-year material, and Widening Participation students get dedicated support to apply.</p></div>
+      <div class="card"><h3>These fundamentals are critical</h3><p>Binary, memory, and how a CPU actually runs a program aren't trivia — they're the foundation everything else in computing is built on. Skip them and higher-level ideas stop making sense.</p></div>
+      <div class="card"><h3>Especially if you want to build things</h3><p>Programming devices, working with hardware, writing fast or reliable software, debugging when something goes wrong — all of it comes back to understanding what's really happening underneath.</p></div>
+      <div class="card"><h3>Durham's first year covers exactly this</h3><p>Computer Systems is core first-year material at Durham — binary, the CPU, how programs really run — building directly on what you did today.</p></div>
     </div>
     <div class="callout">
       <div class="stat">🎓</div>
@@ -558,10 +559,6 @@
       <div class="card"><h3>You now know…</h3><p>A computer only stores 0s and 1s. Numbers, text and images are all just patterns of them.</p></div>
       <div class="card"><h3>You saw…</h3><p>A CPU is a fast, simple machine repeating fetch → decode → execute, moving numbers between registers and memory.</p></div>
       <div class="card"><h3>You proved…</h3><p>Friendly code (C) is quietly translated into tiny machine instructions — and you can read and even write them.</p></div>
-    </div>
-    <div class="callout">
-      <div class="stat">?</div>
-      <p><b>The question that becomes a career:</b> if any program can reach into memory and change any number, how do we keep the important ones safe? That's <b>cyber security</b> — and it's what Dr Shepherd researches. Study Computer Science at Durham and this is the door you just opened.</p>
     </div>
     <p class="sub" style="margin-top:22px">Curious to keep going? Everything today runs in your browser — the <a href="https://cs.gl/riscv-web-emulator/" target="_blank" rel="noopener">RV32 Workbench</a> is free and always here. Try writing a program that prints your initials, or draws them on the screen.</p>
   </div>
