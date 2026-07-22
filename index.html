@@ -372,7 +372,7 @@
   <div class="wrap">
     <div class="kicker">Hands-on</div>
     <h2 class="sec">Drive the machine yourself</h2>
-    <p class="sub">Open the Workbench in a second tab and keep this page next to it. Work at your own pace — the <span class="pill">🌶 Stretch</span> boxes are there if you finish early or want to go deeper. Nothing you do can break your computer; if it gets messy, hit <b>Reset</b> and start again.</p>
+    <p class="sub">Open the Workbench in a second tab and keep this page next to it. Work at your own pace — the <span class="pill">🏋️ Stretch</span> boxes are there if you finish early or want to go deeper. Nothing you do can break your computer; if it gets messy, hit <b>Reset</b> and start again.</p>
     <p style="margin:-8px 0 26px"><a class="btn" href="https://cs.gl/riscv-web-emulator/" target="_blank" rel="noopener">Open the RV32 Workbench ↗</a></p>
 
     <!-- ACTIVITY 1 -->
@@ -397,7 +397,7 @@
         <li>Keep stepping until a <b>4</b> appears in a register (often <code class="inline">a0</code>), then lands in the <b>Console</b>. You just watched arithmetic happen at the level the machine really works.</li>
       </ol>
       <div class="predict"><b>Predict first:</b> before you press Step, how many times do you think you'll press it before the answer shows up? Write your guess, then count.</div>
-      <div class="stretch"><b>🌶 Stretch:</b> Change <code class="inline">2 + 2</code> to <code class="inline">7 * 6</code>. Multiplication needs the <b>M</b> extension — check the ISA selector says <b>RV32IM</b> or <b>RV32IMA</b>. Can you spot the <code class="inline">mul</code> instruction appear in the assembly?</div>
+      <div class="stretch"><b>🏋️ Stretch:</b> Change <code class="inline">2 + 2</code> to <code class="inline">7 * 6</code>. Multiplication needs the <b>M</b> extension — check the ISA selector says <b>RV32IM</b> or <b>RV32IMA</b>. Can you spot the <code class="inline">mul</code> instruction appear in the assembly?</div>
     </div>
 
     <!-- ACTIVITY 2 -->
@@ -415,7 +415,7 @@
         <li>Press <b>Run</b> and see how your change ripples through the rest of the program.</li>
       </ol>
       <div class="predict"><b>Talk to your neighbour:</b> if changing a number is this easy, how does a real computer stop a game (or a virus) from scribbling over something important? Hold that thought — that's the whole field of <b>cyber security</b>.</div>
-      <div class="stretch"><b>🌶 Stretch:</b> Click into the <b>Assembly</b> panel and add one line of your own, e.g. <code class="inline">addi a0, a0, 10</code> (it re-assembles as you type). Reset, run, and see whether the answer shifts by 10. You just hand-wrote machine code.</div>
+      <div class="stretch"><b>🏋️ Stretch:</b> Click into the <b>Assembly</b> panel and add one line of your own, e.g. <code class="inline">addi a0, a0, 10</code> (it re-assembles as you type). Reset, run, and see whether the answer shifts by 10. You just hand-wrote machine code.</div>
     </div>
 
     <!-- ACTIVITY 3 -->
@@ -444,7 +444,7 @@
         <li>Slow to <b>8/sec</b> and watch a register act as the counter <code class="inline">i</code>, climbing 1, 2, 3… while another holds the growing <code class="inline">total</code>.</li>
       </ol>
       <div class="predict"><b>Big realisation:</b> a "loop" is an illusion built from jumping backwards. Every loop you'll ever write, in any language, becomes this underneath.</div>
-      <div class="stretch"><b>🌶 Stretch:</b> Change <code class="inline">i &lt;= 10</code> to <code class="inline">i &lt;= 100</code>. New answer? Then try making it count only the even numbers (hint: <code class="inline">i = i + 2</code> and start at 2).</div>
+      <div class="stretch"><b>🏋️ Stretch:</b> Change <code class="inline">i &lt;= 10</code> to <code class="inline">i &lt;= 100</code>. New answer? Then try making it count only the even numbers (hint: <code class="inline">i = i + 2</code> and start at 2).</div>
     </div>
 
     <!-- ACTIVITY 4 -->
@@ -471,7 +471,7 @@
       </ol>
       <pre>        screen[i] = (i / 8) % 2 ? 0xE0 : 0x1C;  <span class="c">// red / green bands</span></pre>
       <div class="predict"><b>Mind-bender:</b> the photo on your phone, this webpage, a film — all of it is just numbers being written into a block of memory like this one, many times a second. There is no "picture" anywhere. Only numbers.</div>
-      <div class="stretch"><b>🌶 Stretch:</b> Use the pixel's position to pick its colour and make a gradient or checkerboard. Row = <code class="inline">i / 64</code>, column = <code class="inline">i % 64</code>. What pattern can you invent? Show the person next to you.</div>
+      <div class="stretch"><b>🏋️ Stretch:</b> Use the pixel's position to pick its colour and make a gradient or checkerboard. Row = <code class="inline">i / 64</code>, column = <code class="inline">i % 64</code>. What pattern can you invent? Show the person next to you.</div>
     </div>
   </div>
 </section>
