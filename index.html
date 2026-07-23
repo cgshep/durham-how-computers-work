@@ -253,7 +253,7 @@
   <div class="wrap">
     <span class="badge">Destination Durham · Computer Science Taster</span>
     <h1>How a Computer <em>Really</em> Works</h1>
-    <p class="lede">No magic, no jargon you can't crack. In two hours we'll go from a single switch that's either on or off, all the way up to a running program — and you'll drive a virtual processor yourself.</p>
+    <p class="lede">No magic, no jargon you can't crack. In two hours we'll go from a single switch that's either on or off, all the way up to a running program, and you'll drive a virtual processor yourself.</p>
     <div class="hero-actions">
       <a class="btn" href="https://cs.gl/riscv-web-emulator/" target="_blank" rel="noopener">Launch the RV32 Workbench ↗</a>
       <a class="btn ghost" href="#activities">See today's activities</a>
@@ -296,7 +296,7 @@
       <div class="step"><div class="num">5</div><div class="t">1:10 · 15 min</div><div class="n">Modify the machine</div><div class="d">Change memory and registers by hand. Break things on purpose.</div></div>
       <div class="step"><div class="num">6</div><div class="t">1:25 · 15 min</div><div class="n">C → machine code</div><div class="d">Write a line of C and watch it become instructions in real time.</div></div>
       <div class="step"><div class="num">7</div><div class="t">1:40 · 15 min</div><div class="n">Draw with code</div><div class="d">Paint pixels straight into memory on a 64×64 screen.</div></div>
-      <div class="step"><div class="num">8</div><div class="t">1:55 · 5 min</div><div class="n">Zoom out</div><div class="d">What you just learned — and where it can take you.</div></div>
+      <div class="step"><div class="num">8</div><div class="t">1:55 · 5 min</div><div class="n">Zoom out</div><div class="d">What you just learned, and where it can take you.</div></div>
     </div>
   </div>
 </section>
@@ -306,14 +306,14 @@
   <div class="wrap">
     <div class="kicker">Part 1 · First principles</div>
     <h2 class="sec">It's all just switches</h2>
-    <p class="sub">A computer can't store a "7" or a letter "A" or a photo. Deep down it only has millions of tiny switches, each either <b>on (1)</b> or <b>off (0)</b>. Everything else — numbers, text, music, this webpage — is just clever patterns of those switches. One switch is a <b>bit</b>. Eight of them make a <b>byte</b>.</p>
+    <p class="sub">A computer can't store a "7" or a letter "A" or a photo. Deep down it only has millions of tiny switches, each either <b>on (1)</b> or <b>off (0)</b>. Everything else (numbers, text, music, this webpage) is just clever patterns of those switches. One switch is a <b>bit</b>. Eight of them make a <b>byte</b>.</p>
 
     <div class="tool">
-      <label>Flip the switches — each one is worth double the one to its right</label>
+      <label>Flip the switches: each one is worth double the one to its right</label>
       <div class="bits" id="bits"></div>
       <div class="readout">These 8 switches make the number <span class="big" id="binVal">0</span>
         <span style="color:var(--muted)">&nbsp;(binary <code class="inline" id="binStr">00000000</code>)</span></div>
-      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Try to make <b>13</b>. Then the biggest number you can — why does it stop there? Eight switches can only count from 0 to 255. That's why a byte has 256 possible values.</p>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Try to make <b>13</b>, then the biggest number you can. Why does it stop there? Eight switches can only count from 0 to 255. That's why a byte has 256 possible values.</p>
     </div>
 
     <div class="cards">
@@ -330,7 +330,7 @@
         <h3>Try it</h3>
         <p>Type a number 0–255, see its binary:</p>
         <div><input id="cin" type="number" min="0" max="255" value="65"><span class="out" id="cout"></span></div>
-        <p style="margin-top:10px">65 is binary <code class="inline">01000001</code> — <em>and</em> the letter A. Same bits, different meaning. Context is everything.</p>
+        <p style="margin-top:10px">65 is binary <code class="inline">01000001</code>, <em>and</em> the letter A. Same bits, different meaning. Context is everything.</p>
       </div>
     </div>
 
@@ -346,7 +346,7 @@
   <div class="wrap">
     <div class="kicker">Part 2 · The big picture</div>
     <h2 class="sec">The ladder of abstraction</h2>
-    <p class="sub">When you tap an app, you're standing at the top of a tall ladder. Each rung hides the messy detail of the one below it. Today's tool — the <b>RV32 Workbench</b> — lets us climb <em>down</em> and see the rungs that are normally invisible.</p>
+    <p class="sub">When you tap an app, you're standing at the top of a tall ladder. Each rung hides the messy detail of the one below it. Today's tool, the <b>RV32 Workbench</b>, lets us climb <em>down</em> and see the rungs that are normally invisible.</p>
     <div class="ladder">
       <div class="rung" style="background:#8E4F93">📱 Apps &amp; websites <small>what you actually use</small><span class="lvl">you live here</span></div>
       <div class="rung" style="background:#7D4383">💬 Languages like Python, C <small>human-readable instructions</small><span class="lvl">we'll write C</span></div>
@@ -355,7 +355,7 @@
       <div class="rung" style="background:#4A1A4E">⚙️ Logic gates &amp; circuits <small>AND, OR, NOT built from switches</small><span class="lvl">concept today</span></div>
       <div class="rung" style="background:#3A1540">⚡ Transistors &amp; electricity <small>physical on/off switches</small><span class="lvl">the bottom rung</span></div>
     </div>
-    <p class="sub" style="margin-top:24px">Most people spend their whole lives on the top rung. By the end of today you'll have touched four of these six — that's further down than most computing graduates go.</p>
+    <p class="sub" style="margin-top:24px">Most people spend their whole lives on the top rung. By the end of today you'll have touched four of these six; that's further down than most computing graduates go.</p>
   </div>
 </section>
 
@@ -416,7 +416,7 @@
 
     <div class="cards">
       <div class="card"><h3>1 · Fetch</h3><p>Grab the next instruction from memory. The <b>program counter</b> (PC) remembers which one is next.</p></div>
-      <div class="card"><h3>2 · Decode</h3><p>Work out what it says — "add these", "load that", "jump there".</p></div>
+      <div class="card"><h3>2 · Decode</h3><p>Work out what it says: "add these", "load that", "jump there".</p></div>
       <div class="card"><h3>3 · Execute</h3><p>Do it. Usually shuffle a number between a register and memory, or do one sum.</p></div>
       <div class="card"><h3>4 · Repeat</h3><p>Move the PC to the next instruction and start again. Forever.</p></div>
     </div>
@@ -424,16 +424,16 @@
     <h3 style="margin:30px 0 6px;font-size:21px">The two places a CPU keeps numbers</h3>
     <div class="machine">
       <div class="mbox">
-        <h4>Registers — the desk</h4>
+        <h4>Registers: the desk</h4>
         <div class="reg"><span>pc</span><span>which instruction is next</span></div>
         <div class="reg"><span>a0</span><span>a number being worked on</span></div>
         <div class="reg"><span>a1</span><span>another number</span></div>
         <div class="reg"><span>t0</span><span>scratch / temporary</span></div>
-        <div class="reg"><span>sp</span><span>top of the stack — not needed today</span></div>
-        <p>A tiny handful of slots (about 32) right inside the CPU. Lightning fast, but there's almost no room. Like the top of your desk — only what you're using right now.</p>
+        <div class="reg"><span>sp</span><span>top of the stack (not needed today)</span></div>
+        <p>A tiny handful of slots (about 32) right inside the CPU. Lightning fast, but there's almost no room. Like the top of your desk: only what you're using right now.</p>
       </div>
       <div class="mbox">
-        <h4>Memory — the filing cabinet</h4>
+        <h4>Memory: the filing cabinet</h4>
         <div class="reg"><span>.text</span><span>the program's instructions</span></div>
         <div class="reg"><span>.data</span><span>values the program set up</span></div>
         <div class="reg"><span>stack</span><span>working notes, grows &amp; shrinks</span></div>
@@ -445,9 +445,9 @@
       <b>Watch for this in the Workbench:</b> the <b>Registers</b> panel is the desk, the <b>Memory</b> panel is the cabinet, and the <b>PC</b> is the finger pointing at the next instruction. Everything you do today is one of these two places changing.
     </div>
     <details class="aside">
-      <summary>Optional — what actually is "the stack"?</summary>
+      <summary>Optional: what actually is "the stack"?</summary>
       <div class="aside-body">
-        It doesn't click for most people the first time, and that's fine — you don't need it for today. It's a region of memory that grows and shrinks as your program calls functions and returns from them, holding local variables and the address to return to once a function finishes. The stack pointer (<code class="inline">sp</code>) always points at its current top — a call pushes a new frame on, a return pops one off. For more detail: Wikipedia's <a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank" rel="noopener">call stack</a> article, or <a href="https://pythontutor.com/c.html" target="_blank" rel="noopener">Python Tutor's C visualiser ↗</a>, which shows stack frames appearing and disappearing as code runs.
+        It doesn't click for most people the first time, and that's fine; you don't need it for today. It's a region of memory that grows and shrinks as your program calls functions and returns from them, holding local variables and the address to return to once a function finishes. The stack pointer (<code class="inline">sp</code>) always points at its current top: a call pushes a new frame on, a return pops one off. For more detail: Wikipedia's <a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank" rel="noopener">call stack</a> article, or <a href="https://pythontutor.com/c.html" target="_blank" rel="noopener">Python Tutor's C visualiser ↗</a>, which shows stack frames appearing and disappearing as code runs.
       </div>
     </details>
   </div>
@@ -458,7 +458,7 @@
   <div class="wrap">
     <div class="kicker">Hands-on</div>
     <h2 class="sec">Drive the machine yourself</h2>
-    <p class="sub">Open the Workbench in a second tab and keep this page next to it. Work at your own pace — the <span class="pill">🏋️ Stretch</span> boxes are there if you finish early or want to go deeper. Nothing you do can break your computer; if it gets messy, hit <b>Reset</b> and start again.</p>
+    <p class="sub">Open the Workbench in a second tab and keep this page next to it. Work at your own pace; the <span class="pill">🏋️ Stretch</span> boxes are there if you finish early or want to go deeper. Nothing you do can break your computer; if it gets messy, hit <b>Reset</b> and start again.</p>
     <p style="margin:-8px 0 26px"><a class="btn" href="https://cs.gl/riscv-web-emulator/" target="_blank" rel="noopener">Open the RV32 Workbench ↗</a></p>
     <div class="predict" style="max-width:none">
       <b>Want to know what each instruction means?</b> Try this <a href="https://projectf.io/posts/riscv-cheat-sheet/" target="_blank" rel="noopener">simplified RISC-V cheat sheet ↗</a>, or the <a href="https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf" target="_blank" rel="noopener">full instruction reference card (PDF) ↗</a> for more detail.
@@ -480,13 +480,13 @@
     <span class="k">return</span> 0;
 }</pre>
       <ol class="steps" start="2">
-        <li>Look at the <b>Assembly</b> panel. Your one line of C just turned into several lines of assembly — the CPU's real language. Don't worry about every line; find one that looks like <code class="inline">addi</code> or <code class="inline">add</code>. That's the actual addition.</li>
+        <li>Look at the <b>Assembly</b> panel. Your one line of C just turned into several lines of assembly (the CPU's real language). Don't worry about every line; find one that looks like <code class="inline">addi</code> or <code class="inline">add</code>. That's the actual addition.</li>
         <li>Now slow it right down. Set the speed to <b>8 instructions/second</b> (or use the <b>Step</b> button to go one at a time).</li>
-        <li>Press <b>Step</b> and keep your eyes on the <b>Registers</b> panel. Watch the <b>pc</b> value tick forward each press — that's the CPU walking down the instructions.</li>
+        <li>Press <b>Step</b> and keep your eyes on the <b>Registers</b> panel. Watch the <b>pc</b> value tick forward each press; that's the CPU walking down the instructions.</li>
         <li>Keep stepping until a <b>4</b> appears in a register (often <code class="inline">a0</code>), then lands in the <b>Console</b>. You just watched arithmetic happen at the level the machine really works.</li>
       </ol>
       <div class="predict"><b>Predict first:</b> before you press Step, how many times do you think you'll press it before the answer shows up? Write your guess, then count.</div>
-      <div class="stretch"><b>🏋️ Stretch:</b> Change <code class="inline">2 + 2</code> to <code class="inline">7 * 6</code>. Multiplication needs the <b>M</b> extension — check the ISA selector says <b>RV32IM</b> or <b>RV32IMA</b>. Can you spot the <code class="inline">mul</code> instruction appear in the assembly?</div>
+      <div class="stretch"><b>🏋️ Stretch:</b> Change <code class="inline">2 + 2</code> to <code class="inline">7 * 6</code>. Multiplication needs the <b>M</b> extension; check the ISA selector says <b>RV32IM</b> or <b>RV32IMA</b>. Can you spot the <code class="inline">mul</code> instruction appear in the assembly?</div>
     </div>
 
     <!-- ACTIVITY 2 -->
@@ -499,11 +499,11 @@
       <p class="goal">Goal: prove the registers and memory are just numbers you can reach in and change.</p>
       <ol class="steps">
         <li>With any small program loaded, <b>Reset</b>, then <b>Step</b> a few times so some registers hold values.</li>
-        <li>In the <b>Registers</b> panel, <b>click a value</b> (try <code class="inline">t0</code> or <code class="inline">a1</code>) and type a new number — say <code class="inline">99</code>. The CPU now believes that. Nothing checked. Nothing asked permission.</li>
+        <li>In the <b>Registers</b> panel, <b>click a value</b> (try <code class="inline">t0</code> or <code class="inline">a1</code>) and type a new number, say <code class="inline">99</code>. The CPU now believes that. Nothing checked. Nothing asked permission.</li>
         <li>Do the same in the <b>Memory</b> panel: click a slot in the <b>.data</b> area and change it. You've just edited the machine's "filing cabinet" directly.</li>
         <li>Press <b>Run</b> and see how your change ripples through the rest of the program.</li>
       </ol>
-      <div class="predict"><b>Research:</b> if changing a number is this easy, how does a real computer stop a game (or a virus) from scribbling over something important? Hold that thought — that's the whole field of <b>cyber security</b>.</div>
+      <div class="predict"><b>Research:</b> if changing a number is this easy, how does a real computer stop a game (or a virus) from scribbling over something important? Hold that thought; that's the whole field of <b>cyber security</b>.</div>
       <div class="stretch"><b>🏋️ Stretch:</b> Click into the <b>Assembly</b> panel and add one line of your own, e.g. <code class="inline">addi a0, a0, 10</code> (it re-assembles as you type). Reset, run, and see whether the answer shifts by 10. You just hand-wrote machine code.</div>
     </div>
 
@@ -529,7 +529,7 @@
       <ol class="steps" start="2">
         <li>Before running: work out on paper what <code class="inline">total</code> should be. (1+2+3…+10.)</li>
         <li>Run it. Did you get <b>55</b>?</li>
-        <li>Now look at the <b>Assembly</b> panel and count the lines. Three lines of C became <em>many</em> instructions — because the CPU has no idea what a "loop" is. It only knows "add" and "jump back if not finished yet".</li>
+        <li>Now look at the <b>Assembly</b> panel and count the lines. Three lines of C became <em>many</em> instructions, because the CPU has no idea what a "loop" is. It only knows "add" and "jump back if not finished yet".</li>
         <li>Can you identify the instruction in the Assembly panel that makes the loop start again?</li>
       </ol>
       <div class="predict"><b>Big realisation:</b> a "loop" is an illusion built from jumping backwards. Every loop you'll ever write, in any language, becomes this underneath.</div>
@@ -543,8 +543,8 @@
         <h3>Paint pixels straight into memory</h3>
         <div class="time">~15 min</div>
       </div>
-      <p class="goal">Goal: the payoff — draw on a real screen by writing numbers into memory, exactly how every screen you own works.</p>
-      <p>The Workbench has a <b>64×64 screen</b> that lives in memory starting at address <code class="inline">0x10000</code>. Each pixel is one byte — one number 0–255 — that sets its colour (3 bits red, 3 green, 2 blue). Writing to that memory <em>is</em> drawing.</p>
+      <p class="goal">Goal: the payoff, drawing on a real screen by writing numbers into memory, exactly how every screen you own works.</p>
+      <p>The Workbench has a <b>64×64 screen</b> that lives in memory starting at address <code class="inline">0x10000</code>. Each pixel is one byte (one number 0–255) that sets its colour (3 bits red, 3 green, 2 blue). Writing to that memory <em>is</em> drawing.</p>
       <pre><span class="k">int</span> <span class="f">main</span>() {
     <span class="c">// treat memory from 0x10000 as a row of pixels</span>
     <span class="k">char</span>* screen = 0x10000;
@@ -554,12 +554,12 @@
     <span class="k">return</span> 0;
 }</pre>
       <ol class="steps">
-        <li>Run it. The whole screen should turn red. You didn't call a "draw" function — you just wrote numbers into slots, and the screen shows whatever's there.</li>
+        <li>Run it. The whole screen should turn red. You didn't call a "draw" function; you just wrote numbers into slots, and the screen shows whatever's there.</li>
         <li>Try other colours: <code class="inline">0x1C</code> = green, <code class="inline">0x03</code> = blue, <code class="inline">0xFF</code> = white, <code class="inline">0x00</code> = black.</li>
         <li>Make stripes instead of a fill. Replace the line inside the loop with:</li>
       </ol>
       <pre>        screen[i] = (i / 8) % 2 ? 0xE0 : 0x1C;  <span class="c">// red / green bands</span></pre>
-      <div class="predict"><b>Mind-bender:</b> the photo on your phone, this webpage, a film — all of it is just numbers being written into a block of memory like this one, many times a second. There is no "picture" anywhere. Only numbers.</div>
+      <div class="predict"><b>Mind-bender:</b> all of it (the photo on your phone, this webpage, a film) is just numbers being written into a block of memory like this one, many times a second. There is no "picture" anywhere. Only numbers.</div>
       <div class="stretch"><b>🏋️ Stretch:</b> Use the pixel's position to pick its colour and make a gradient or checkerboard. Row = <code class="inline">i / 64</code>, column = <code class="inline">i % 64</code>. What pattern can you invent? Show the person next to you.</div>
     </div>
   </div>
@@ -571,7 +571,7 @@
   <div class="wrap">
     <div class="kicker">Fill it in as you go</div>
     <h2 class="sec">Your student workbook</h2>
-    <p class="sub">Write your guesses <b>before</b> you run anything — fill it in here on screen, or just think it through.</p>
+    <p class="sub">Write your guesses <b>before</b> you run anything; fill it in here on screen, or just think it through.</p>
 
     <div class="sheet">
       <h3>Part 1 · It's all just switches</h3>
@@ -579,7 +579,7 @@
       <div class="wq"><b>(a)</b> Make <b>13</b> &nbsp;→&nbsp; binary <span class="wl long"></span></div>
       <div class="wq"><b>(b)</b> Make <b>42</b> &nbsp;→&nbsp; binary <span class="wl long"></span></div>
       <div class="wq"><b>(c)</b> The biggest number 8 switches can make is <span class="wl"></span></div>
-      <div class="wq" style="color:var(--muted);font-style:italic">Why does it stop there? Because 8 switches only reach <span class="wl" style="min-width:70px"></span> — which is why one byte has 256 values (0–255).</div>
+      <div class="wq" style="color:var(--muted);font-style:italic">Why does it stop there? Because 8 switches only reach <span class="wl" style="min-width:70px"></span>, which is why one byte has 256 values (0–255).</div>
     </div>
 
     <div class="sheet">
@@ -591,7 +591,7 @@
     </div>
 
     <div class="sheet">
-      <h3>Part 2 · The ladder — tick each rung as we reach it</h3>
+      <h3>Part 2 · The ladder: tick each rung as we reach it</h3>
       <ul class="ticklist">
         <li><label><input type="checkbox" class="box"><b>Apps &amp; websites</b><span class="d">what you normally use</span></label></li>
         <li><label><input type="checkbox" class="box"><b>Languages like C / Python</b><span class="d">human-friendly instructions</span></label></li>
@@ -619,8 +619,8 @@
     <p class="sub">You don't need to have coded before today, and you don't need to decide anything now. But the fundamentals from today are worth taking seriously.</p>
     <div class="cards">
       <div class="card"><h3>They're foundational</h3><p>Binary, memory, and the fetch–execute cycle underpin everything else in computing. Without them, the higher-level ideas stop making sense.</p></div>
-      <div class="card"><h3>They matter for hardware as much as software</h3><p>Programming devices, working with hardware, writing fast or reliable code, debugging when something breaks — it all comes back to understanding what's actually happening underneath.</p></div>
-      <div class="card"><h3>Durham's first year starts here</h3><p>Computer Systems, a core first-year module at Durham, covers binary, the CPU, and how programs really run — building directly on today.</p></div>
+      <div class="card"><h3>They matter for hardware as much as software</h3><p>Programming devices, working with hardware, writing fast or reliable code, debugging when something breaks; it all comes back to understanding what's actually happening underneath.</p></div>
+      <div class="card"><h3>Durham's first year starts here</h3><p>Computer Systems, a core first-year module at Durham, covers binary, the CPU, and how programs really run, building directly on today.</p></div>
     </div>
     <div class="callout">
       <div class="stat">🎓</div>
@@ -634,13 +634,13 @@
   <div class="wrap">
     <div class="kicker">Part 8 · Zoom out</div>
     <h2 class="sec">What you just did</h2>
-    <p class="sub">In two hours you went from a single on/off switch to writing code that a processor executed one instruction at a time — and you drew a picture by hand-placing numbers in memory. That's the real machine, with the magic removed.</p>
+    <p class="sub">In two hours you went from a single on/off switch to writing code that a processor executed one instruction at a time, and you drew a picture by hand-placing numbers in memory. That's the real machine, with the magic removed.</p>
     <div class="cards">
       <div class="card"><h3>You now know…</h3><p>A computer only stores 0s and 1s. Numbers, text and images are all just patterns of them.</p></div>
       <div class="card"><h3>You saw…</h3><p>A CPU is a fast, simple machine repeating fetch → decode → execute, moving numbers between registers and memory.</p></div>
-      <div class="card"><h3>You proved…</h3><p>Friendly code (C) is quietly translated into tiny machine instructions — and you can read and even write them.</p></div>
+      <div class="card"><h3>You proved…</h3><p>Friendly code (C) is quietly translated into tiny machine instructions, and you can read and even write them.</p></div>
     </div>
-    <p class="sub" style="margin-top:22px">Curious to keep going? Everything today runs in your browser — the <a href="https://cs.gl/riscv-web-emulator/" target="_blank" rel="noopener">RV32 Workbench</a> is free and always here. Try writing a program that prints your initials, or draws them on the screen.</p>
+    <p class="sub" style="margin-top:22px">Curious to keep going? Everything today runs in your browser; the <a href="https://cs.gl/riscv-web-emulator/" target="_blank" rel="noopener">RV32 Workbench</a> is free and always here. Try writing a program that prints your initials, or draws them on the screen.</p>
   </div>
 </section>
 
@@ -649,13 +649,13 @@
   <div class="wrap">
     <div class="kicker">Cheat sheet</div>
     <h2 class="sec">Words we used today</h2>
-    <p class="sub">Keep this. Every one of these is a word real computer scientists use every day — and now so do you.</p>
+    <p class="sub">Keep this. Every one of these is a word real computer scientists use every day, and now so do you.</p>
     <div class="gloss">
       <div class="gitem"><dt>Bit</dt><dd>A single switch: 0 or 1. The smallest piece of information there is.</dd></div>
       <div class="gitem"><dt>Byte</dt><dd>Eight bits together. Can hold a number from 0 to 255, or one letter.</dd></div>
       <div class="gitem"><dt>Binary</dt><dd>Counting with only 0 and 1, using powers of two.</dd></div>
       <div class="gitem"><dt>ASCII</dt><dd>The rule that maps letters to numbers (A = 65, B = 66…).</dd></div>
-      <div class="gitem"><dt>CPU</dt><dd>The processor — the part that follows instructions and does the sums.</dd></div>
+      <div class="gitem"><dt>CPU</dt><dd>The processor, the part that follows instructions and does the sums.</dd></div>
       <div class="gitem"><dt>Register</dt><dd>A tiny, super-fast storage slot inside the CPU. There are only a few.</dd></div>
       <div class="gitem"><dt>Memory (RAM)</dt><dd>A huge set of numbered slots the CPU reads from and writes to.</dd></div>
       <div class="gitem"><dt>Address</dt><dd>The "house number" of one slot in memory, e.g. 0x10000.</dd></div>
