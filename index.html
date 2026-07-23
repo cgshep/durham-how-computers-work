@@ -90,6 +90,9 @@
   .rung small{font-weight:normal;opacity:.9;font-size:13px}
   .rung .lvl{font-size:12px;background:rgba(255,255,255,.22);padding:2px 9px;border-radius:20px;margin-left:auto;white-space:nowrap}
 
+  /* ---- cycle diagram ---- */
+  .cycle-diagram{display:block;width:100%;max-width:760px;height:auto;margin:6px auto 22px}
+
   /* ---- cards ---- */
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:0 3px 10px rgba(80,40,90,.05)}
@@ -293,7 +296,7 @@
       </div>
       <div class="card">
         <h3>Text</h3>
-        <p>Every letter is secretly a number. Capital <b>A</b> is 65, <b>B</b> is 66… This rule is called <b>ASCII</b>.</p>
+        <p>Every letter is secretly a number. Capital <b>A</b> is 65, <b>B</b> is 66… This rule is called <b>ASCII</b> (<a href="https://www.asciitable.com/" target="_blank" rel="noopener">full table ↗</a>).</p>
         <div class="asciibox" id="ascii"></div>
       </div>
       <div class="card conv">
@@ -335,6 +338,34 @@
     <div class="kicker">Part 3 · Inside the box</div>
     <h2 class="sec">The CPU: fast, and gloriously stupid</h2>
     <p class="sub">A processor (CPU) does one boring thing, billions of times a second. It's called the <b>fetch–execute cycle</b>:</p>
+
+    <svg viewBox="0 0 760 200" class="cycle-diagram" role="img" aria-label="Diagram of the fetch, decode, execute, update-PC cycle looping back to fetch">
+      <defs>
+        <marker id="cycleArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--purple)"/>
+        </marker>
+        <marker id="cycleArrowLt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--purple-lt)"/>
+        </marker>
+      </defs>
+      <g font-family="'Libre Baskerville',Georgia,serif" font-weight="bold" font-size="18" fill="#fff" text-anchor="middle">
+        <rect x="10" y="20" width="150" height="64" rx="10" fill="var(--purple)"/>
+        <text x="85" y="58">Fetch</text>
+        <rect x="205" y="20" width="150" height="64" rx="10" fill="var(--purple)"/>
+        <text x="280" y="58">Decode</text>
+        <rect x="400" y="20" width="150" height="64" rx="10" fill="var(--purple)"/>
+        <text x="475" y="58">Execute</text>
+        <rect x="595" y="20" width="150" height="64" rx="10" fill="var(--purple-dk)"/>
+        <text x="670" y="50">Update</text>
+        <text x="670" y="72">PC</text>
+      </g>
+      <path d="M160,52 L200,52" stroke="var(--purple)" stroke-width="3" fill="none" marker-end="url(#cycleArrow)"/>
+      <path d="M355,52 L395,52" stroke="var(--purple)" stroke-width="3" fill="none" marker-end="url(#cycleArrow)"/>
+      <path d="M550,52 L590,52" stroke="var(--purple)" stroke-width="3" fill="none" marker-end="url(#cycleArrow)"/>
+      <path d="M670,84 C670,155 85,155 85,88" stroke="var(--purple-lt)" stroke-width="3" fill="none" marker-end="url(#cycleArrowLt)"/>
+      <text x="380" y="172" text-anchor="middle" font-size="13" fill="var(--muted)">…billions of times a second</text>
+    </svg>
+
     <div class="cards">
       <div class="card"><h3>1 · Fetch</h3><p>Grab the next instruction from memory. The <b>program counter</b> (PC) remembers which one is next.</p></div>
       <div class="card"><h3>2 · Decode</h3><p>Work out what it says — "add these", "load that", "jump there".</p></div>
