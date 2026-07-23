@@ -76,9 +76,16 @@
   .sub{color:var(--muted);max-width:720px;margin:0 0 26px;font-size:17px}
 
   /* ---- timeline / arc ---- */
-  .arc{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-  .arc .step{background:var(--lilac);border:1px solid var(--line);border-radius:10px;padding:14px 14px 16px;position:relative}
-  section:nth-of-type(even) .arc .step{background:var(--lilac)}
+  .arc{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+  .arc .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px;position:relative;
+    box-shadow:0 3px 10px rgba(80,40,90,.06);transition:transform .15s ease,box-shadow .15s ease}
+  .arc .step:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(80,40,90,.14)}
+  .arc .step .num{width:32px;height:32px;border-radius:50%;background:var(--purple);color:#fff;display:flex;
+    align-items:center;justify-content:center;font-family:'Libre Baskerville',Georgia,serif;font-weight:bold;
+    font-size:14px;margin-bottom:12px}
+  .arc .step.is-break{background:var(--lilac);border:1.5px dashed var(--purple-lt);box-shadow:none}
+  .arc .step.is-break:hover{transform:none;box-shadow:none}
+  .arc .step.is-break .num{background:transparent;color:inherit;font-size:22px;width:auto;height:auto;margin-bottom:8px}
   .arc .step .t{font-size:12px;font-weight:bold;color:var(--purple-lt);letter-spacing:.5px}
   .arc .step .n{font-family:'Libre Baskerville',Georgia,serif;font-size:16px;color:var(--purple-dk);margin:4px 0 4px;font-weight:bold}
   .arc .step .d{font-size:13.5px;color:var(--muted)}
@@ -261,15 +268,15 @@
     <h2 class="sec">Here's where we're going</h2>
     <p class="sub">Every step builds on the one before. By the end, every layer between electricity and an app will have passed through your own hands.</p>
     <div class="arc">
-      <div class="step"><div class="t">0:00 · 15 min</div><div class="n">1 · Just switches</div><div class="d">Everything a computer knows is built from on/off. We count in binary.</div></div>
-      <div class="step"><div class="t">0:15 · 10 min</div><div class="n">2 · The ladder</div><div class="d">From electrons to apps: the layers of abstraction that hide the machine.</div></div>
-      <div class="step"><div class="t">0:25 · 15 min</div><div class="n">3 · Meet the CPU</div><div class="d">A blindingly fast, incredibly stupid machine. Registers, memory, the fetch–execute loop.</div></div>
-      <div class="step"><div class="t">0:40 · 20 min</div><div class="n">4 · Make it add</div><div class="d">Step through real instructions one at a time and watch the numbers move.</div></div>
-      <div class="step"><div class="t">1:00 · 10 min</div><div class="n">☕ Break</div><div class="d">Stretch, questions, breathe.</div></div>
-      <div class="step"><div class="t">1:10 · 15 min</div><div class="n">5 · Poke the machine</div><div class="d">Change memory and registers by hand. Break things on purpose.</div></div>
-      <div class="step"><div class="t">1:25 · 15 min</div><div class="n">6 · C → machine code</div><div class="d">Write a line of C and watch it become instructions in real time.</div></div>
-      <div class="step"><div class="t">1:40 · 15 min</div><div class="n">7 · Draw with code</div><div class="d">Paint pixels straight into memory on a 64×64 screen.</div></div>
-      <div class="step"><div class="t">1:55 · 5 min</div><div class="n">8 · Zoom out</div><div class="d">What you just learned — and where it can take you.</div></div>
+      <div class="step"><div class="num">1</div><div class="t">0:00 · 15 min</div><div class="n">Just switches</div><div class="d">Everything a computer knows is built from on/off. We count in binary.</div></div>
+      <div class="step"><div class="num">2</div><div class="t">0:15 · 10 min</div><div class="n">The ladder</div><div class="d">From electrons to apps: the layers of abstraction that hide the machine.</div></div>
+      <div class="step"><div class="num">3</div><div class="t">0:25 · 15 min</div><div class="n">Meet the CPU</div><div class="d">A blindingly fast, incredibly stupid machine. Registers, memory, the fetch–execute loop.</div></div>
+      <div class="step"><div class="num">4</div><div class="t">0:40 · 20 min</div><div class="n">Make it add</div><div class="d">Step through real instructions one at a time and watch the numbers move.</div></div>
+      <div class="step is-break"><div class="num">☕</div><div class="t">1:00 · 10 min</div><div class="n">Break</div><div class="d">Stretch, questions, breathe.</div></div>
+      <div class="step"><div class="num">5</div><div class="t">1:10 · 15 min</div><div class="n">Poke the machine</div><div class="d">Change memory and registers by hand. Break things on purpose.</div></div>
+      <div class="step"><div class="num">6</div><div class="t">1:25 · 15 min</div><div class="n">C → machine code</div><div class="d">Write a line of C and watch it become instructions in real time.</div></div>
+      <div class="step"><div class="num">7</div><div class="t">1:40 · 15 min</div><div class="n">Draw with code</div><div class="d">Paint pixels straight into memory on a 64×64 screen.</div></div>
+      <div class="step"><div class="num">8</div><div class="t">1:55 · 5 min</div><div class="n">Zoom out</div><div class="d">What you just learned — and where it can take you.</div></div>
     </div>
   </div>
 </section>
@@ -514,7 +521,7 @@
       <p>The Workbench has a <b>64×64 screen</b> that lives in memory starting at address <code class="inline">0x10000</code>. Each pixel is one byte — one number 0–255 — that sets its colour (3 bits red, 3 green, 2 blue). Writing to that memory <em>is</em> drawing.</p>
       <pre><span class="k">int</span> <span class="f">main</span>() {
     <span class="c">// treat memory from 0x10000 as a row of pixels</span>
-    <span class="k">char</span>* screen = (<span class="k">char</span>*)0x10000;
+    <span class="k">char</span>* screen = 0x10000;
     <span class="k">for</span> (<span class="k">int</span> i = 0; i &lt; 64*64; i++) {
         screen[i] = 0xE0;      <span class="c">// 0xE0 = full red</span>
     }
