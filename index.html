@@ -162,6 +162,16 @@
   .mbox .reg span:first-child{color:var(--purple-lt);font-weight:bold}
   .mbox p{font-size:13.5px;color:var(--muted);margin:8px 0 0}
 
+  /* ---- optional aside / details ---- */
+  .aside{background:#f2f0f2;border:1px solid var(--line);border-radius:9px;margin:14px 0;color:var(--muted)}
+  .aside summary{cursor:pointer;padding:11px 16px;font-size:14px;font-weight:bold;list-style:none;color:var(--muted)}
+  .aside summary::-webkit-details-marker{display:none}
+  .aside summary::before{content:'▸  ';color:var(--muted)}
+  .aside[open] summary::before{content:'▾  '}
+  .aside summary:hover{color:var(--purple-dk)}
+  .aside .aside-body{padding:0 16px 14px;font-size:13.5px}
+  .aside .aside-body a{color:var(--purple-lt)}
+
   /* ---- glossary ---- */
   .gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
   .gloss dt{font-weight:bold;color:var(--purple-dk);font-family:'Libre Baskerville',Georgia,serif}
@@ -412,7 +422,7 @@
         <div class="reg"><span>a0</span><span>a number being worked on</span></div>
         <div class="reg"><span>a1</span><span>another number</span></div>
         <div class="reg"><span>t0</span><span>scratch / temporary</span></div>
-        <div class="reg"><span>sp</span><span>top of the stack</span></div>
+        <div class="reg"><span>sp</span><span>top of the stack — not needed today</span></div>
         <p>A tiny handful of slots (about 32) right inside the CPU. Lightning fast, but there's almost no room. Like the top of your desk — only what you're using right now.</p>
       </div>
       <div class="mbox">
@@ -427,9 +437,12 @@
     <div class="predict" style="max-width:none">
       <b>Watch for this in the Workbench:</b> the <b>Registers</b> panel is the desk, the <b>Memory</b> panel is the cabinet, and the <b>PC</b> is the finger pointing at the next instruction. Everything you do today is one of these two places changing.
     </div>
-    <div class="predict" style="max-width:none">
-      <b>A note on the stack:</b> it doesn't click for most people the first time, and that's fine. It's a region of memory that grows and shrinks as your program calls functions and returns from them, holding local variables and the address to return to once a function finishes. The stack pointer (<code class="inline">sp</code>) always points at its current top — a call pushes a new frame on, a return pops one off. For more detail: Wikipedia's <a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank" rel="noopener">call stack</a> article, or <a href="https://pythontutor.com/c.html" target="_blank" rel="noopener">Python Tutor's C visualiser ↗</a>, which shows stack frames appearing and disappearing as code runs.
-    </div>
+    <details class="aside">
+      <summary>Optional — what actually is "the stack"?</summary>
+      <div class="aside-body">
+        It doesn't click for most people the first time, and that's fine — you don't need it for today. It's a region of memory that grows and shrinks as your program calls functions and returns from them, holding local variables and the address to return to once a function finishes. The stack pointer (<code class="inline">sp</code>) always points at its current top — a call pushes a new frame on, a return pops one off. For more detail: Wikipedia's <a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank" rel="noopener">call stack</a> article, or <a href="https://pythontutor.com/c.html" target="_blank" rel="noopener">Python Tutor's C visualiser ↗</a>, which shows stack frames appearing and disappearing as code runs.
+      </div>
+    </details>
   </div>
 </section>
 
