@@ -353,6 +353,8 @@
         <span style="color:var(--muted)">&nbsp;(binary <code class="inline" id="binStr16">00000000 00000000</code>)</span></div>
       <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Same trick, just more switches. Two bytes can count from 0 to <b>65,535</b>, since 256 × 256 gives 65,536 possible values. Every extra byte multiplies the range by another 256.</p>
     </div>
+
+    <p class="sub">Numbers stored as switches like this can be added, multiplied, compared, all of it. We won't cover how today; it's too much detail for one session. But somewhere inside every CPU there's a circuit built entirely from switches that does exactly this: it takes two sets of switches in and produces a new set of switches out that represents the answer. Addition, multiplication, everything a calculator does, is just this trick wired together.</p>
   </div>
 </section>
 
