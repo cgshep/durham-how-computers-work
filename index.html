@@ -152,6 +152,10 @@
   .bit.on .v,.bit.on .p{color:#fff}
   .readout{font-size:15px;margin-top:6px}
   .readout .big{font-family:'Libre Baskerville',Georgia,serif;font-size:30px;color:var(--purple-dk);font-weight:bold}
+  .bits16{display:flex;gap:24px;flex-wrap:wrap;margin-top:8px}
+  .byte-group{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .byte-group .bits{margin:0}
+  .byte-label{font-size:11px;font-weight:bold;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
   .conv input{font-size:16px;padding:8px 10px;border:1.5px solid var(--line);border-radius:7px;width:120px;font-family:monospace}
   .conv .out{font-family:monospace;font-size:16px;color:var(--purple-dk);margin-left:8px}
   .asciibox{font-size:14px;margin-top:8px}
@@ -337,6 +341,17 @@
     <div class="callout">
       <div class="stat">0&amp;1</div>
       <p><b>The big idea:</b> a computer never "understands" anything. It just moves patterns of on/off around, insanely fast, following rules we give it. The rest of today is about <em>what those rules look like</em>.</p>
+    </div>
+
+    <div class="tool">
+      <label>Now try two bytes: 16 switches, still each one worth double the one to its right</label>
+      <div class="bits16">
+        <div class="byte-group"><div class="bits" id="bits16a"></div><div class="byte-label">Byte 1</div></div>
+        <div class="byte-group"><div class="bits" id="bits16b"></div><div class="byte-label">Byte 2</div></div>
+      </div>
+      <div class="readout">These 16 switches make the number <span class="big" id="binVal16">0</span>
+        <span style="color:var(--muted)">&nbsp;(binary <code class="inline" id="binStr16">00000000 00000000</code>)</span></div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Same trick, just more switches. Two bytes can count from 0 to <b>65,535</b>, since 256 × 256 gives 65,536 possible values. Every extra byte multiplies the range by another 256.</p>
     </div>
   </div>
 </section>
@@ -721,6 +736,30 @@
     for(var i=0;i<8;i++){total+=state[i]*bitVals[i];str+=state[i];}
     document.getElementById('binVal').textContent=total;
     document.getElementById('binStr').textContent=str;
+  }
+
+  // ---- two-byte (16-bit) switches ----
+  var bitVals16=[32768,16384,8192,4096,2048,1024,512,256,128,64,32,16,8,4,2,1];
+  var state16=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  var bits16a=document.getElementById('bits16a');
+  var bits16b=document.getElementById('bits16b');
+  bitVals16.forEach(function(v,i){
+    var d=document.createElement('div');
+    d.className='bit';
+    d.innerHTML='<div class="v">0</div><div class="p">'+v+'</div>';
+    d.onclick=function(){
+      state16[i]=state16[i]?0:1;
+      d.classList.toggle('on',!!state16[i]);
+      d.querySelector('.v').textContent=state16[i];
+      renderBits16();
+    };
+    (i<8?bits16a:bits16b).appendChild(d);
+  });
+  function renderBits16(){
+    var total=0,str='';
+    for(var i=0;i<16;i++){total+=state16[i]*bitVals16[i];str+=state16[i];}
+    document.getElementById('binVal16').textContent=total;
+    document.getElementById('binStr16').textContent=str.slice(0,8)+' '+str.slice(8);
   }
 
   // ---- decimal -> binary converter ----
