@@ -375,6 +375,9 @@
     <h2 class="sec">Drive the machine yourself</h2>
     <p class="sub">Open the Workbench in a second tab and keep this page next to it. Work at your own pace — the <span class="pill">🏋️ Stretch</span> boxes are there if you finish early or want to go deeper. Nothing you do can break your computer; if it gets messy, hit <b>Reset</b> and start again.</p>
     <p style="margin:-8px 0 26px"><a class="btn" href="https://cs.gl/riscv-web-emulator/" target="_blank" rel="noopener">Open the RV32 Workbench ↗</a></p>
+    <div class="predict" style="max-width:none">
+      <b>Stuck on what an instruction means?</b> Try this <a href="https://projectf.io/posts/riscv-cheat-sheet/" target="_blank" rel="noopener">simplified RISC-V cheat sheet ↗</a>, or the <a href="https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf" target="_blank" rel="noopener">full instruction reference card (PDF) ↗</a> for more detail.
+    </div>
 
     <!-- ACTIVITY 1 -->
     <div class="activity">
@@ -442,7 +445,7 @@
         <li>Before running: work out on paper what <code class="inline">total</code> should be. (1+2+3…+10.)</li>
         <li>Run it. Did you get <b>55</b>?</li>
         <li>Now look at the <b>Assembly</b> panel and count the lines. Three lines of C became <em>many</em> instructions — because the CPU has no idea what a "loop" is. It only knows "add" and "jump back if not finished yet".</li>
-        <li>Slow to <b>8/sec</b> and watch a register act as the counter <code class="inline">i</code>, climbing 1, 2, 3… while another holds the growing <code class="inline">total</code>.</li>
+        <li>Can you identify the instruction in the Assembly panel that makes the loop start again?</li>
       </ol>
       <div class="predict"><b>Big realisation:</b> a "loop" is an illusion built from jumping backwards. Every loop you'll ever write, in any language, becomes this underneath.</div>
       <div class="stretch"><b>🏋️ Stretch:</b> Change <code class="inline">i &lt;= 10</code> to <code class="inline">i &lt;= 100</code>. New answer? Then try making it count only the even numbers (hint: <code class="inline">i = i + 2</code> and start at 2).</div>
@@ -459,7 +462,7 @@
       <p>The Workbench has a <b>64×64 screen</b> that lives in memory starting at address <code class="inline">0x10000</code>. Each pixel is one byte — one number 0–255 — that sets its colour (3 bits red, 3 green, 2 blue). Writing to that memory <em>is</em> drawing.</p>
       <pre><span class="k">int</span> <span class="f">main</span>() {
     <span class="c">// treat memory from 0x10000 as a row of pixels</span>
-    <span class="k">unsigned char</span>* screen = (<span class="k">unsigned char</span>*)0x10000;
+    <span class="k">char</span>* screen = (<span class="k">char</span>*)0x10000;
     <span class="k">for</span> (<span class="k">int</span> i = 0; i &lt; 64*64; i++) {
         screen[i] = 0xE0;      <span class="c">// 0xE0 = full red</span>
     }
@@ -512,15 +515,6 @@
         <li><label><input type="checkbox" class="box"><b>Logic gates</b><span class="d">AND / OR / NOT from switches</span></label></li>
         <li><label><input type="checkbox" class="box"><b>Transistors &amp; electricity</b><span class="d">the physical on/off switches</span></label></li>
       </ul>
-    </div>
-
-    <div class="sheet">
-      <h3>Predict-first prompts (fill in as you go)</h3>
-      <p class="lead">The four activities are above. Jot your predictions here before you press Run.</p>
-      <div class="wq"><b>Activity 1:</b> how many Step presses before the <b>4</b> appears? Guess <span class="wl"></span> &nbsp; Actual <span class="wl"></span></div>
-      <div class="wq"><b>Activity 3:</b> what is 1+2+3+…+10? <span class="wl"></span></div>
-      <div class="wq"><b>Activity 2:</b> if changing any number is this easy, how does a real computer stop a virus doing it?</div>
-      <div class="wq"><span class="wl full"></span><span class="wl full"></span></div>
     </div>
 
     <div class="sheet" style="border-left:6px solid var(--purple)">
@@ -599,12 +593,14 @@
         <h4>How a Computer Really Works</h4>
         <p>A Destination Durham taster session</p>
         <p>Dr Carlton Shepherd · Durham University</p>
-        <p>Questions, or want a session for your school? <a href="mailto:carlton.g.shepherd@durham.ac.uk">Get in touch ↗</a></p>
+        <p>Questions? <a href="mailto:carlton.g.shepherd@durham.ac.uk">Get in touch ↗</a></p>
       </div>
       <div>
         <h4>Tools &amp; links</h4>
         <p><a href="https://cs.gl/riscv-web-emulator/" target="_blank" rel="noopener">RV32 Workbench emulator ↗</a></p>
         <p><a href="assets/slides/How_Computers_Work_Durham.pdf" target="_blank" rel="noopener">Slides from today (PDF) ↗</a></p>
+        <p><a href="https://projectf.io/posts/riscv-cheat-sheet/" target="_blank" rel="noopener">RISC-V cheat sheet ↗</a></p>
+        <p><a href="https://www.cl.cam.ac.uk/teaching/1617/ECAD+Arch/files/docs/RISCVGreenCardv8-20151013.pdf" target="_blank" rel="noopener">RISC-V instruction reference (PDF) ↗</a></p>
         <p><a href="https://www.durham.ac.uk/visit-us/schools/access-engagement/destination-durham/" target="_blank" rel="noopener">About Destination Durham ↗</a></p>
         <p><a href="#activities">Back to the activities</a></p>
       </div>
