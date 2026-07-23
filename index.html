@@ -424,6 +424,9 @@
     <div class="predict" style="max-width:none">
       <b>Watch for this in the Workbench:</b> the <b>Registers</b> panel is the desk, the <b>Memory</b> panel is the cabinet, and the <b>PC</b> is the finger pointing at the next instruction. Everything you do today is one of these two places changing.
     </div>
+    <div class="predict" style="max-width:none">
+      <b>Honestly? The stack takes a while to click — you're not expected to get it today.</b> It's a region of memory that grows and shrinks as your program calls functions and returns from them, holding local variables and "where to come back to" once a function finishes. The stack pointer (<code class="inline">sp</code>) always points at its current top: a call pushes a new frame on, a return pops one off. If you want to go further than today allows, Wikipedia's <a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank" rel="noopener">call stack</a> article is a solid overview, and <a href="https://pythontutor.com/c.html" target="_blank" rel="noopener">Python Tutor's C visualiser ↗</a> lets you watch stack frames appear and disappear, one line at a time.
+    </div>
   </div>
 </section>
 
